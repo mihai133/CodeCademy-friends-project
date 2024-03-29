@@ -1,25 +1,31 @@
-<p id="notice" style="color: green"><%= notice %></p>
-
 <h1>Friend list</h1>
 
-<table class="table" id="friends">
-  <thead>
+<table class="table table-striped table-hover" id="friends">
+  <thead class="table-dark">
     <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Twitter</th>
-    <th>Actions</th>
+      <th>First Name</th>
+      <th >Last Name</th>
+      <th >Email</th>
+      <th>Phone</th>
+      <th >Twitter</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @friends.each do |friend| %>
+      <tr>
       <%= render friend %>
-      
+      <td class="d-flex gap-1">
+        <%= link_to "Show", friend, class: "btn btn-outline-secondary" %>
+        <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-outline-secondary" %>
+        <%= button_to "Delete", friend, method: :delete, class: " btn btn-danger" %>
+      </td>
+      </tr>
 
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New friend", new_friend_path %>
+
+
+<%= link_to "New friend", new_friend_path, class: "btn btn-secondary" %>
