@@ -10,12 +10,16 @@
         <li class="nav-item">
           <%= link_to "About us", home_about_path, class:"nav-link" %>
         </li>
+
+        <li class="nav-item">
+          <%= link_to "Friends", friends_path, class:"nav-link" %>
+        </li>
        
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+      <button class="d-flex btn btn-success">
+        <%= link_to "Add friend", new_friend_path, class:"nav-link" %>
+      </button>
     </div>
   </div>
 </nav>
