@@ -11,32 +11,33 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+  <div class="d-flex flex-column gap-3">
+  <div class="form-floating">
+    <%= form.text_field :first_name, placeholder:"First name", class:"form-control" %>
+    <%= form.label :first_name, style: "display: block", class:"form-label" %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_field :last_name,  placeholder:"Last name", class:"form-control" %>
+    <%= form.label :last_name, style: "display: block", class:"form-label" %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_field :email,  placeholder:"Email", class:"form-control" %>
+    <%= form.label :email, style: "display: block", class:"form-label" %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_field :phone,  placeholder:"Phone", class:"form-control" %>
+    <%= form.label :phone, style: "display: block", class:"form-label" %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_field :twitter,  placeholder:"Twitter", class:"form-control" %>
+    <%= form.label :twitter, style: "display: block", class:"form-label" %>
   </div>
 
   <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label :twitter, style: "display: block" %>
-    <%= form.text_field :twitter %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
