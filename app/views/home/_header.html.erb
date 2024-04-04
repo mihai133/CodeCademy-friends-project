@@ -14,12 +14,30 @@
         <li class="nav-item">
           <%= link_to "Friends", friends_path, class:"nav-link" %>
         </li>
+
+        <% if user_signed_in?  %>
+        <li class="nav-item">
+          <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Edit profile", edit_user_registration_path, class:"nav-link" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, class:"nav-link" %>
+        </li>
+        <% end %>
        
       </ul>
 
+      <% if user_signed_in?  %>
       <button class="d-flex btn btn-success">
         <%= link_to "Add friend", new_friend_path, class:"nav-link" %>
       </button>
+      <% end %>
     </div>
   </div>
 </nav>

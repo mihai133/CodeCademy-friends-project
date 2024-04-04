@@ -1,0 +1,37 @@
+
+<div class="card">
+<div class="card-header text-center py-4 bg-light">LOGO HERE</div>
+
+<div class="card-body mx-auto w-50">
+  <h2>Sign up</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="d-flex flex-column gap-3">
+      <div class="form-floating">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"form-control" %>
+        <%= f.label :email %>
+      </div>
+
+      <div class="field form-floating">
+      <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password", class:"form-control" %>
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+    </div>
+
+    <div class="field form-floating">
+      <%= f.password_field :password_confirmation, placeholder: "Confirm password", autocomplete: "new-password", class:"form-control" %>
+      <%= f.label :password_confirmation %>
+    </div>
+
+    <div class="actions mt-4 text-center">
+      <%= f.submit "Sign up" , class:"btn btn-primary px-4" %>
+    </div>
+  <% end %>
+
+  <div class="d-flex gap-2 mt-2 justify-content-center">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
