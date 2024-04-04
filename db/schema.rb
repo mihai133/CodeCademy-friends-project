@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_26_141252) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_01_105849) do
   create_table "friends", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -19,6 +19,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_26_141252) do
     t.string "twitter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "friend_id"
+    t.index ["friend_id"], name: "index_friends_on_friend_id"
   end
 
+  add_foreign_key "friends", "friends"
 end
